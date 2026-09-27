@@ -72,6 +72,7 @@ func NewScheduler(store datastore.Store, routerConfig *conf.RouterConfiguration)
 	}
 	filterPluginMap := []string{
 		"least-request",
+		"lora-affinity",
 	}
 	pluginsArgMap := map[string]runtime.RawExtension{
 		"least-request": {Raw: []byte(`{"maxWaitingRequests": 10}`)},
